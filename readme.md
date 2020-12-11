@@ -8,6 +8,15 @@ to make it work, run:
 gprolog --consult-file inmueble.pl >> oth.txt
 ```
 
+then create a list variable where all items are variables, validation_code_generators function in python script can make it for you, after that, run model with your variable defined and wait a couple of minutes, and then type a letter to calculate all possible response and wait solver to end.
+
+```
+➜  linpro gprolog --consult-file inmueble.pl >> oth.txt
+| ?- L = [_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _].
+| ?- lpinmuebles(L).
+a| ?- e%                                                                                      ➜  linpro git
+```
+
 replace oth.txt for any other file, then replace oth.txt in python file and run it, you will get something like:
 
 ```
@@ -38,3 +47,14 @@ RF81 designed as variable is variable
 RF92 designed as variable is variable
 constant features:  ['F0', 'RF1', 'RF2', 'RF3', 'RF4', 'RF6', 'RF9', 'RF11', 'RF21', 'RF23', 'RF42', 'RF61', 'RF62', 'RF64', 'RF71', 'RF91']
 ```
+
+this is only suitable for small product line models with a few features, this project only meant to help to make validations in a faster way.
+
+
+## Usefull resources:
+
+- https://en.wikipedia.org/wiki/Prolog_syntax_and_semantics
+- http://www.cs.trincoll.edu/~ram/cpsc352/notes/prolog/factsrules.html
+- http://pauillac.inria.fr/~haemmerl/gprolog-rh/doc/manual006.html
+- http://www.gprolog.org/manual/html_node/gprolog007.html
+- https://scholar.lib.vt.edu/ejournals/JFLP/jflp-mirror/articles/2001/S01-02/JFLP-A01-06.pdf
