@@ -70,9 +70,12 @@ def validate_model_results():
     constant_leaves = []
     for ft in leaves:
         if ft in variable_leaves:
+            # here are variable features
             zero_val = None
             one_val = None
             indx = leaves.index(ft)
+            # if detected true and false, variable feature
+            # is verified and we must check the next one
             for stp in product_line_setups:
                 if stp[indx] == 1:
                     one_val = True
@@ -81,9 +84,13 @@ def validate_model_results():
                 if all([zero_val, one_val]):
                     print(f'{ft} designed as variable is variable')
                     break
+            # checked all configurations without find zero and one value
+            # so we determine if is a dead element or a mandatory feature
             if not all([zero_val, one_val]):
-                print(f'{ft} designed as variable is not variable')
-
+                if zero_val:
+                    print(f'{ft} is a dead element')
+                else:
+                    print(f'{ft} designed as variable is not variable, is mandatory')
         else:
             constant_leaves.append(ft)
             one_val = None
