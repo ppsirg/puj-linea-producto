@@ -92,4 +92,4 @@ def validate_model_results():
 
 
 if __name__ == "__main__":
-    somestuff()
+    validate_model_results()

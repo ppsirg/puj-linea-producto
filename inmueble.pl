@@ -46,7 +46,7 @@ RF62 #= RF6,
 RF63 #=< RF6,
 RF64 #= RF6,
 %consultas
-RF7 #= F0,
+RF7 #=< F0,
 RF71 #= RF7,
 RF72 #=< RF7,
 RF73 #=< RF7,
